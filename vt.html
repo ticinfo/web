@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' rel="stylesheet">
+  <link href="https://unpkg.com/vuetify/dist/vuetify.min.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+  <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+  <div class="fnd-banner">
+    <div id="app" style="max-width: 700px; margin: 0 auto;">
+      <v-app>
+        <v-content>
+          <v-container>
+              Prueba 
+              <br>
+              <ul>
+                  <li v-for="val in vArray">{{ val }}</li>
+              </ul> 
+              <br>
+              {{ message }}
+              <br>
+              <img src="img/img.jpg" alt="texto de la imagen">
+          </v-container>
+          <br>
+         
+          <v-layout row>
+            <v-flex xs4>
+              <v-subheader>Normal with hint text</v-subheader>
+            </v-flex>
+            <v-flex xs8>
+              <v-text-field
+                name="input-1-3"
+                label="Hint Text"
+                single-line
+              ></v-text-field>
+            </v-flex>
+          </v-layout>
+          <v-layout row>
+            <v-flex xs4>
+              <v-subheader>Press</v-subheader>
+            </v-flex>
+            <v-flex xs8>
+              <v-text-field
+                name="input-2-3"
+                label="Hint Text"
+                class="input-group--focused"
+                single-line
+              ></v-text-field>
+            </v-flex>
+          </v-layout>
+          <v-layout row>
+            <v-flex xs4>
+              <v-subheader>Focus</v-subheader>
+            </v-flex>
+            <v-flex xs8>
+              <v-text-field
+                name="input-3-3"
+                label="Hint Text"
+                value="Input text"
+                class="input-group--focused"
+                single-line
+              ></v-text-field>
+            </v-flex>
+          </v-layout>
+          <v-layout row>
+            <v-flex xs4>
+              <v-subheader>Normal with input text</v-subheader>
+            </v-flex>
+            <v-flex xs8>
+              <v-text-field
+                name="input-3-4"
+                label="Hint Text"
+                value="Input text"
+                single-line
+              ></v-text-field>
+            </v-flex>
+          </v-layout>
+          <v-layout row>
+            <v-flex xs4>
+              <v-subheader>Error</v-subheader>
+            </v-flex>
+            <v-flex xs8>
+              <v-text-field
+                :rules="[() => 'Username or Password is incorrect.']"
+                name="input-3-5"
+                label="Hint Text"
+                value="Input text"
+                error
+                single-line
+              ></v-text-field>
+            </v-flex>
+          </v-layout>
+          <v-layout row>
+            <v-flex xs4>
+              <v-subheader>Disabled</v-subheader>
+            </v-flex>
+            <v-flex xs8>
+              <v-text-field
+                name="input-3"
+                label="Label Text"
+                value="Input text"
+                disabled
+                single-line
+              ></v-text-field>
+            </v-flex>
+          </v-layout>
+
+        </v-content>
+
+        <v-container fluid grid-list-md>
+          <v-layout row wrap>
+            <v-flex xs4>
+              <v-subheader>Normal with hint text</v-subheader>
+            </v-flex>
+            <v-flex xs12 sm5>
+              <v-text-field
+                name="input-1-3"
+                label="Hint Text"
+                single-line
+                prepend-icon="phone"
+              ></v-text-field>
+            </v-flex>
+            <v-flex xs12 sm3>
+              <v-select :items="[{ text: 'Mobile' }]" label="Mobile"></v-select>
+            </v-flex>
+          </v-layout>
+          <v-layout row wrap>
+            <v-flex xs4>
+              <v-subheader>Focus</v-subheader>
+            </v-flex>
+            <v-flex xs12 sm5>
+              <v-text-field
+                name="input-2-3"
+                label="Hint Text"
+                class="input-group--focused"
+                prepend-icon="phone"
+                value="650"
+                single-line
+              ></v-text-field>
+            </v-flex>
+            <v-flex xs12 sm3>
+              <v-select :items="[{ text: 'Mobile' }]" label="Mobile"></v-select>
+            </v-flex>
+
+          </v-layout>
+          <v-layout row wrap>
+            <v-flex xs4>
+              <v-subheader>Normal with input text</v-subheader>
+            </v-flex>
+            <v-flex xs12 sm5>
+              <v-text-field
+                name="input-3-3"
+                label="Hint Text"
+                value="650-555-1234"
+                prepend-icon="phone"
+                single-line
+              ></v-text-field>
+            </v-flex>
+            <v-flex xs12 sm3>
+              <v-select :items="[{ text: 'Mobile' }]" label="Mobile"></v-select>
+            </v-flex>
+          </v-layout>
+        </v-container>
+      </v-app>
+    </div>
+  </div>
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+  <script src="https://unpkg.com/vuetify/dist/vuetify.js"></script>
+  <script>
+    var app = new Vue({
+      el: '#app',
+      data: {
+        message: 'ho funciona vue!',
+        vArray: [
+            'Aprender Vue.js',
+            'Inscribirse en Styde',
+            'Seguir a @Stydenet en Twitter'
+        ]
+      }
+    })
+  </script>
+</body>
+</html>
+
